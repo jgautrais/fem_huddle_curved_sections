@@ -5,4 +5,4 @@
 - HTML&CSS
 - Flexbox
 
-Live preview -->
+Live preview --> https://fem-huddle-curved-sections.vercel.app/
