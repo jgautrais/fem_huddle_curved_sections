@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Huddle landing page with curved sections</title>
+
+</head>
+<body>
+  <div class="canvas">
+  <header class="header">
+    <div class="container flex flex--header">
+      <img src="./images/logo.svg" alt="Huddle Logo" class="header__logo">
+      <a href="#" class="header__button">Try it free</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title">Build The Community Your Fans Will Love</h1>
+        <p class="hero__content"> Huddle re-imagines the way we build communities. You have a voice, but so does
+          your audience. Create connections with your users as you engage in genuine discussion.</p>
+        <a href="#" class="main__button">Get Started For Free</a>
+        <img src="./images/screen-mockups.svg" alt="Website Mockups" class="hero__mockup">
+
+        <div class="hero__social flex">
+
+          <div class="hero__social__card flex">
+            <img src="./images/icon-communities.svg" alt="Icon" class="hero__social__card__icon hero__social__card__icon--communities">
+            <p class="hero__social__card__counter">1.4k+</p>
+            <p class="hero__social__card__label">Communities Formed</p>
+          </div>
+
+          <div class="hero__social__card flex">
+            <img src="./images/icon-messages.svg" alt="Icon" class="hero__social__card__icon hero__social__card__icon--communities">
+            <p class="hero__social__card__counter">2.7m+</p>
+            <p class="hero__social__card__label">Messages Sent</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="primary">
+
+      <div class="polygon polygon--top">
+        <svg class="poly-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#F5FAFF" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,197.3C384,213,480,267,576,277.3C672,288,768,256,864,213.3C960,171,1056,117,1152,112C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
+
+      <article class="primary__card">
+        <div class="container">
+          <img src="./images/illustration-grow-together.svg" alt="Illustration" class="primary_card_illustration primary_card_illustration--right">
+          <div class="primary__card__text">
+            <h2 class="primary__card__title">Grow Together</h2>
+            <p class="primary__card__content"> Generate meaningful discussions with your audience and build a strong, loyal community.
+              Think of the insightful conversations you miss out on with a feedback form.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="polygon polygon--bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#F5FAFF" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,197.3C384,213,480,267,576,277.3C672,288,768,256,864,213.3C960,171,1056,117,1152,112C1248,107,1344,149,1392,170.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+        </svg>
+      </div>
+
+      <article class="primary__card">
+        <div class="container">
+          <img src="./images/illustration-flowing-conversation.svg" alt="Illustration" class="primary_card_illustration">
+          <div class="primary__card__text">
+            <h2 class="primary__card__title">Flowing Conversations</h2>
+            <p class="primary__card__content">You wouldn't paginate a conversation in real life, so why do it online? Our threads have
+              just-in-time loading for a more natural flow.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="polygon polygon--top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#F5FAFF" fill-opacity="1" d="M0,128L48,117.3C96,107,192,85,288,80C384,75,480,85,576,106.7C672,128,768,160,864,181.3C960,203,1056,213,1152,181.3C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
+
+      <article class="primary__card">
+        <div class="container">
+          <img src="./images/illustration-your-users.svg" alt="Illustration" class="primary_card_illustration primary_card_illustration--right">
+          <div class="primary__card__text">
+            <h2 class="primary__card__title">Your Users</h2>
+            <p class="primary__card__content">It takes no time at all to integrate Huddle with your app's authentication solution. This means,
+              once signed in to your app, your users can start chatting immediately.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="polygon polygon--bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#F5FAFF" fill-opacity="1" d="M0,128L48,117.3C96,107,192,85,288,80C384,75,480,85,576,106.7C672,128,768,160,864,181.3C960,203,1056,213,1152,181.3C1248,149,1344,75,1392,37.3L1440,0L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+        </svg>
+      </div>
+
+    </section>
+
+    <section class="call">
+      <div class="container">
+        <h2 class="call__title">Ready To Build Your Community?</h2>
+        <a href="#" class="main__button">Get Started For Free</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="polygon polygon--top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#00252E" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,64C480,32,600,32,720,74.7C840,117,960,203,1080,208C1200,213,1320,139,1380,101.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    </svg>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <section class="newsletter">
+          <p class="newsletter__title">Newsletter</p>
+          <p class="newsletter__content">To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never
+            send you spam or pass on your email address</p>
+
+          <form action="GET" class="newsletter__form">
+            <div class="newsletter__form__mail">
+              <input type="email" class="newsletter__form__email" required placeholder=" ">
+              <p class="emailAlert">Please check your email</p>
+            </div>
+
+            <input type="submit" class="newsletter__form__submit" value="Subscribe">
+          </form>
+
+        </section>
+
+        <address class="contact">
+
+          <img src="./images/logo.svg" alt="Huddle Logo" class="contact__logo">
+
+          <p class="contact__address">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit lacinia
+            vestibulum a, ultrices quis sem.</p>
+
+          <div class="contact__item">
+            <div class="contact__item__icon contact__item__icon--phone"></div>
+            <p>Phone: <a href="tel: +1-543-123-4567" class="contact__item__content">+1-543-123-4567</a></p>
+          </div>
+
+          <div class="contact__item">
+            <div class="contact__item__icon contact__item__icon--email"></div>
+            <a href="mailto: example@huddle.com" class="contact__item__content">example@huddle.com</a>
+          </div>
+
+        </address>
+      </div>
+
+      <section class="social">
+
+        <a href="https://www.facebook.com" target="_blank" class="social__icon social__icon--facebook">
+        </a>
+
+        <a href="https://www.instagram.com" target="_blank" class="social__icon social__icon--instagram">
+        </a>
+
+        <a href="https://www.twitter.com" target="_blank" class="social__icon social__icon--twitter">
+        </a>
+
+      </section>
+
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/jgautrais/fem_huddle_curved_sections">Jeremy</a>.
+      </p>
+
+    </div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,748 @@
+/* @docs
+label: Core Remedies
+version: 0.1.0-beta.2
+note: |
+  These remedies are recommended
+  as a starter for any project.
+category: file
+*/
+
+
+/* @docs
+label: Box Sizing
+note: |
+  Use border-box by default, globally.
+category: global
+*/
+*, *::before, *::after { box-sizing: border-box; }
+
+
+/* @docs
+label: Line Sizing
+note: |
+  Consistent line-spacing,
+  even when inline elements have different line-heights.
+links:
+  - https://drafts.csswg.org/css-inline-3/#line-sizing-property
+category: global
+*/
+html { line-sizing: normal; }
+
+
+/* @docs
+label: Body Margins
+note: |
+  Remove the tiny space around the edge of the page.
+category: global
+*/
+body, p { margin: 0; }
+
+
+/* @docs
+label: Hidden Attribute
+note: |
+  Maintain `hidden` behaviour when overriding `display` values.
+  category: global
+*/
+[hidden] { display: none; }
+
+
+/* @docs
+label: Heading Sizes
+note: |
+  Switch to rem units for headings
+category: typography
+*/
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.17rem; }
+h4 { font-size: 1.00rem; }
+h5 { font-size: 0.83rem; }
+h6 { font-size: 0.67rem; }
+
+
+/* @docs
+label: H1 Margins
+note: |
+  Keep h1 margins consistent, even when nested.
+category: typography
+*/
+h1 { margin: 0.67em 0; }
+
+
+/* @docs
+label: Pre Wrapping
+note: |
+  Overflow by default is bad...
+category: typography
+*/
+pre { white-space: pre-wrap; }
+
+
+/* @docs
+label: Horizontal Rule
+note: |
+  1. Solid, thin horizontal rules
+  2. Remove Firefox `color: gray`
+  3. Remove default `1px` height, and common `overflow: hidden`
+category: typography
+*/
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+
+/* @docs
+label: Responsive Embeds
+note: |
+  1. Block display is usually what we want
+  2. Remove strange space-below in case authors overwrite the display value
+  3. Responsive by default
+  4. Audio without `[controls]` remains hidden by default
+category: embedded elements
+*/
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+audio:not([controls]) { display:none; }
+
+
+/* @docs
+label: Responsive Images
+note: |
+  These new elements display inline by default,
+  but that's not the expected behavior for either one.
+  This can interfere with proper layout and aspect-ratio handling.
+  1. Remove the unnecessary wrapping `picture`, while maintaining contents
+  2. Source elements have nothing to display, so we hide them entirely
+category: embedded elements
+*/
+picture { display: contents; }
+source { display: none; }
+
+
+/* @docs
+label: Aspect Ratios
+note: |
+  Maintain intrinsic aspect ratios when `max-width` is applied.
+  `iframe`, `embed`, and `object` are also embedded,
+  but have no intrinsic ratio,
+  so their `height` needs to be set explicitly.
+category: embedded elements
+*/
+img, svg, video, canvas {
+  height: auto;
+}
+
+
+/* @docs
+label: Audio Width
+note: |
+  There is no good reason elements default to 300px,
+  and audio files are unlikely to come with a width attribute.
+category: embedded elements
+*/
+audio { width: 100%; }
+
+/* @docs
+label: Image Borders
+note: |
+  Remove the border on images inside links in IE 10 and earlier.
+category: legacy browsers
+*/
+img { border-style: none; }
+
+
+/* @docs
+label: SVG Overflow
+note: |
+  Hide the overflow in IE 10 and earlier.
+category: legacy browsers
+*/
+svg { overflow: hidden; }
+
+
+/* @docs
+label: HTML5 Elements
+note: |
+  Default block display on HTML5 elements.
+  For oldIE to apply this styling one needs to add some JS as well (i.e. `document.createElement("main")`)
+links:
+  - https://www.sitepoint.com/html5-older-browsers-and-the-shiv/
+category: legacy browsers
+*/
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+
+/* @docs
+label: Checkbox & Radio Inputs
+note: |
+  1. Add the correct box sizing in IE 10
+  2. Remove the padding in IE 10
+category: legacy browsers
+*/
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/*SITE CSS*/
+
+
+:root {
+  --pink: hsl(322, 100%, 66%);
+  --lightpink: hsl(321, 100%, 78%);
+  --lightred: hsl(0, 100%, 63%);
+
+  --verydarkcyan: hsl(192, 100%, 9%);
+  --verypaleblue: hsl(207, 100%, 98%);
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+a:link,
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 375px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header {
+  margin: 1.5rem 0 5rem;
+}
+
+.flex--header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  width: 120px;
+}
+
+.header__button {
+  color: var(--pink);
+  border: 2px solid var(--pink);
+  padding: 0.4em 1.4em;
+  border-radius: 100px;
+}
+
+.header__button:hover {
+  color: var(--lightpink);
+  border: 2px solid var(--lightpink);
+}
+
+.main {
+  margin-bottom: 5rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.hero__title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero__content {
+  margin: 0 auto 3rem;
+}
+
+.main__button {
+  display: inline-block;
+  margin-bottom: 6rem;
+  color: white;
+  background: var(--pink);
+  font-weight: 600;
+  padding: 0.9em 3em;
+  border-radius: 100px;
+  -webkit-box-shadow: 0 4px 10px #ccc;
+          box-shadow: 0 4px 10px #ccc;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main__button:hover {
+  background: var(--lightpink);
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-box-shadow: 0 4px 12px #bbb;
+          box-shadow: 0 4px 12px #bbb;
+}
+
+.hero__mockup {
+  display: block;
+  margin: 0 auto;
+}
+
+.hero__social {
+  margin: 6rem auto 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero__social__card {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 12rem;
+  margin-bottom: 4rem;
+}
+
+.hero__social__card__icon {
+  width: 48px;
+}
+
+.hero__social__card__counter {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.hero__social__card__label {
+  color: #777;
+}
+
+.polygon {
+  margin: 0;
+  position: relative;
+}
+
+.polygon--top {
+  top: 10px;
+}
+
+.polygon--bottom {
+  bottom: 10px;
+}
+
+.primary {
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.primary__card {
+  padding: 1rem 0;
+}
+
+.primary__card:nth-of-type(odd) {
+  background: var(--verypaleblue);
+}
+
+.primary_card_illustration,
+.primary__card__text {
+  margin-bottom: 4rem;
+}
+
+.primary__card__text {
+  text-align: center;
+}
+
+.primary__card__title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.primary__card__content {
+  font-size: 0.93rem;
+}
+
+.call {
+  text-align: center;
+}
+
+.call__title {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer {
+  background: var(--verydarkcyan);
+  color: #fff;
+}
+
+.footer__top {
+  margin-bottom: 3rem;
+}
+
+.newsletter,
+.contact {
+  padding-top: 4rem;
+}
+
+.newsletter__title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.newsletter__content {
+  margin-bottom: 2rem;
+}
+
+.newsletter__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  min-height: 10rem;
+}
+
+.newsletter__form__mail {
+  width: 100%;
+}
+
+.newsletter__form__email {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+form .emailAlert {
+  color: #fff;
+  font-size: 0px;
+  font-weight: 700;
+  padding-left: 1.5rem;
+  text-align: left;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+form input:focus:not(:placeholder-shown):invalid + .emailAlert {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-size: 10px;
+  margin-top: 0.4rem;
+}
+
+.newsletter__form__submit {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 1.1rem 3rem;
+  border-radius: 0.5rem;
+  color: white;
+  background: var(--pink);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.newsletter__form__submit:hover {
+  background: var(--lightpink);
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-box-shadow: 0 4px 12px #222;
+          box-shadow: 0 4px 12px #222;
+  cursor: pointer;
+}
+
+.contact__logo {
+  width: 240px;
+  margin-bottom: 1rem;
+  -webkit-filter: brightness(0%) invert(100%);
+          filter: brightness(0%) invert(100%);
+}
+
+.contact__address {
+  margin-bottom: 3rem;
+}
+
+.contact__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.contact__item__icon {
+  width: 20px;
+  margin-right: 1rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.contact__item__icon--phone {
+  background-image: url("./images/icon-phone.svg");
+}
+
+.contact__item__icon--email {
+  background-image: url("./images/icon-email.svg");
+}
+
+.contact__item__content:link,
+.contact__item__content:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.contact__item__content:hover {
+  text-decoration: underline;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 3rem;
+}
+
+.social__icon {
+  -webkit-filter: brightness(0%) invert(100%);
+          filter: brightness(0%) invert(100%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.social__icon:hover {
+  -webkit-filter: invert(84%) sepia(15%) saturate(362%) hue-rotate(177deg) brightness(105%) contrast(94%);
+         -filter: invert(84%) sepia(15%) saturate(362%) hue-rotate(177deg) brightness(105%) contrast(94%);
+}
+
+.social__icon + .social__icon {
+  margin-left: 1.2rem;
+}
+
+.social__icon--facebook {
+  background-image: url("./images/facebook.png");
+}
+
+.social__icon--twitter {
+  background-image: url("./images/twitter.png");
+}
+
+.social__icon--instagram {
+  background-image: url("./images/instagram.png");
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.attribution a {
+  color: #eee;
+}
+
+@media (min-width: 46rem) {
+
+  .container {
+    max-width: 1440px;
+  }
+
+  .header {
+    margin: 3rem 0 5rem;
+  }
+
+  .header__logo {
+    width: 240px;
+  }
+
+  .header__button {
+    padding: 0.5em 2em;
+  }
+
+  .hero__title {
+    font-size: 2.8rem;
+  }
+
+  .hero__content {
+    max-width: 30rem;
+  }
+
+  .main__button {
+    padding: 1.2em 5em;
+  }
+
+  .hero__social {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    max-width: 90%;
+  }
+
+  .primary__card .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .primary_card_illustration {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    max-width: 40%;
+  }
+
+  .primary__card:nth-of-type(odd) .container .primary_card_illustration {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  .primary__card__text {
+    text-align: left;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    max-width: min(30rem, 42%);
+  }
+
+  .primary__card__title {
+    font-size: 1.6rem;
+  }
+
+  .call__title {
+    font-size: 2.5rem;
+  }
+
+  .footer__top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .newsletter {
+    max-width: 34rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-left: 4rem;
+  }
+
+  .newsletter__content {
+    max-width: 24rem;
+  }
+
+  .contact {
+    max-width: 20.6rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0;
+            flex: 1 0;
+  }
+}
+
+@media (min-width: 62rem) {
+  .newsletter__form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-height: 0;
+  }
+
+  .newsletter__form__submit {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-left: 1rem;
+  }
+}
+
