@@ -222,7 +222,6 @@ input[type="submit"],
 .input-checkbox {
   -webkit-appearance: none;
   border-radius: 0;
-  border-width: none;
 }
 
 body {
@@ -475,6 +474,7 @@ a:hover {
   font-size: 1.1rem;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
+  border-width: none;
 }
 
 form .emailAlert {
