@@ -498,7 +498,7 @@ form input:focus:not(:placeholder-shown):invalid + .emailAlert {
   margin-top: 0.4rem;
 }
 
-.newsletter__form__submit {
+input[type="submit"].newsletter__form__submit {
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding: 1.1rem 3rem;
