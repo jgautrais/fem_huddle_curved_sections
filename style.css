@@ -749,7 +749,7 @@ input[type="submit"].newsletter__form__submit {
     min-height: 0;
   }
 
-  .newsletter__form__submit {
+  input[type="submit"].newsletter__form__submit {
     -ms-flex-item-align: start;
         align-self: flex-start;
     margin-left: 1rem;
