@@ -214,6 +214,16 @@ category: legacy browsers
           box-sizing: border-box;
 }
 
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 body {
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
