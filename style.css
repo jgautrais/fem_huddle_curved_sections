@@ -514,7 +514,7 @@ input[type="submit"].newsletter__form__submit {
   transition: 0.2s ease-in-out;
 }
 
-.newsletter__form__submit:hover {
+input[type="submit"].newsletter__form__submit:hover {
   background: var(--lightpink);
   -webkit-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
